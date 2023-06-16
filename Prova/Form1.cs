@@ -30,7 +30,7 @@ namespace Prova
             double ti;
             double valealimentacao;
             double valetransporte;
-            double irpf;
+            double irpf = 0.0;
 
             //MessageBox.Show($"{salario}");
 
@@ -38,14 +38,14 @@ namespace Prova
             {
                 periculosidade = salario * 0.20;
                 salario = salario + periculosidade;
-                MessageBox.Show($"salario inicial: {salario}");
+                //MessageBox.Show($"salario inicial: {salario}");
             }
 
             else if (funcao == "TI")
             {
                 ti = 5600;
                 salario = salario + ti;
-                MessageBox.Show($"salario inicial: {salario}");
+                //MessageBox.Show($"salario inicial: {salario}");
             }
 
             else if(funcao == "ADM")
@@ -56,15 +56,18 @@ namespace Prova
                 valealimentacao = 200;
 
                 salario = salario + valealimentacao;
-                MessageBox.Show($"salario inicial: {salario}");
+                //MessageBox.Show($"salario inicial: {salario}");
             }
 
             if(salario > 5000)
             {
                 irpf = salario * 0.17;
                 salario = salario - irpf;
-                MessageBox.Show($"salario final: {salario}");
+                //MessageBox.Show($"salario final: {salario}");
             }
+
+            lb_salariototal.Text = $"Salário total: {salario}";
+            lb_irpf.Text = $"IRPF: {irpf}";
         }
     }
 }
